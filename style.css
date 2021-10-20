@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&display=swap");
-
 *,
 *::after,
 *::before {
@@ -18,36 +16,31 @@ input::placeholder {
 
 :root {
   /* colors */
-
   --hue: 220;
   --text: var(--hue) 4.8% 28.9%;
   --accent1: var(--hue) 43.6% 57.5%;
   --accent2: var(--hue) 71.4% 95.9%;
   --bkg: var(--hue) 100% 99.6%;
-
   /* box-shadows */
-
-  --box-sm: 4px 6px 8px hsl(var(--accent1) / 14%),
+  --boxs-sm: 4px 6px 8px hsl(var(--accent1) / 14%),
     -3px 3px 18px 2px hsl(var(--accent1) / 12%),
     2px 5px 10px -3px hsl(var(--accent1) / 20%);
-  --box-lg: 0px 8px 10px hsl(var(--accent1) / 14%),
+  --boxs-lg: 0px 8px 10px hsl(var(--accent1) / 14%),
     0px 3px 14px 2px hsl(var(--accent1) / 12%),
     0px 5px 5px -3px hsl(var(--accent1) / 20%);
-
   /* sizing */
-
   --xlg: 2.369rem;
   --lg: 1.777rem;
   --md: 1.333rem;
   --sm: 1rem;
   --xsm: 0.75rem;
-
   /* misc */
-
   --radius--sm: 5px;
   --radius--lg: 15px;
   --transition: all 160ms cubic-bezier(0.99, 0.03, 0.68, 0.93);
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&display=swap");
 
 body {
   font-family: "Inter", sans-serif;
@@ -82,8 +75,8 @@ small {
   border-radius: var(--radius--lg);
   padding: var(--sm) var(--lg);
   font-size: var(--sm);
-  box-shadow: var(--box-lg);
-  -webkit-box-shadow: var(--box-lg);
+  box-shadow: var(--boxs-lg);
+  -webkit-box-shadow: var(--boxs-lg);
   width: 100%;
   max-width: 400px;
   display: block;
@@ -104,7 +97,7 @@ small {
   -webkit-appearance: none;
 }
 
-.post__container {
+.post-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: var(--xlg);
@@ -115,7 +108,7 @@ small {
   background-color: hsl(var(--bkg));
   border-radius: var(--radius--lg);
   padding: var(--lg);
-  box-shadow: var(--box-lg);
+  box-shadow: var(--boxs-lg);
   display: grid;
   gap: var(--md);
 }
@@ -125,7 +118,7 @@ small {
   gap: 10px;
 }
 
-.post__tag__container {
+.post__tag--container {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
@@ -145,7 +138,7 @@ small {
 }
 
 .post__date,
-.post__author__name,
+.post__author--name,
 .post__header {
   font-weight: 700;
 }
@@ -174,12 +167,12 @@ small {
   align-items: center;
 }
 
-.post__author__avatar {
+.post__author--avatar {
   border-radius: 50%;
-  box-shadow: var(--box-sm);
+  box-shadow: var(--boxs-sm);
 }
 
-.post__author__role {
+.post__author--role {
   color: hsl(var(--accent1));
 }
 
@@ -193,10 +186,10 @@ small {
   text-overflow: ellipsis;
 }
 
-.post__button {
+.btn {
   background-color: hsl(var(--accent1) / 0.96);
   color: hsl(var(--accent2));
-  box-shadow: var(--box-sm);
+  box-shadow: var(--boxs-sm);
   padding: calc(var(--xsm) * 0.7) var(--md);
   border-radius: var(--radius--sm);
   width: max-content;
@@ -207,18 +200,7 @@ small {
   transition: var(--transition);
 }
 
-.view__button {
-  background-color: hsl(var(--accent1) / 0.96);
-  color: hsl(var(--accent2));
-  box-shadow: var(--box-sm);
-  padding: calc(var(--xsm) * 0.7) var(--md);
-  border-radius: var(--radius--sm);
-  width: max-content;
-  font-size: var(--sm);
-  letter-spacing: 0.015em;
-  text-decoration: none;
-  cursor: pointer;
-  transition: var(--transition);
+.btn--view {
   background-color: hsl(var(--accent1) / 0.5);
   padding: var(--xsm) var(--md);
 }
@@ -229,7 +211,7 @@ small {
 }
 
 @media only screen and (min-width: 768px) {
-  .post__container {
+  .post-container {
     grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
   }
 
